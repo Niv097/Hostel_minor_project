@@ -8,7 +8,11 @@ const app = express()
 var cors = require('cors');
 const cookieParser = require("cookie-parser");
 var bodyParser = require('body-parser');
-app.use(cors({ origin:true, credentials:true }));
+app.use(cors({
+  origin: 'https://hostel-minor-project.vercel.app',  // Replace with your Vercel frontend domain
+  credentials: true
+}));
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 // app.use(cors());
