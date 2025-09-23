@@ -12,7 +12,7 @@ app.use(cors({ origin:true, credentials:true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 // app.use(cors());
-const port = 5000
+const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/g',require('./routes/gate_stoken'))
@@ -42,6 +42,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port, () => {
-  console.log(`iNotebook backend listening on port http://localhost:${port}`)
-})
+app.listen(port, '0.0.0.0', () => { console.log(`Backend running on port ${port}`); });

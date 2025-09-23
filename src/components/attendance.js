@@ -47,7 +47,7 @@ export const Attendance = () => {
   const [attendli,setattendli]=useState()
 
    const getAttendance=async()=>{
-    const response=await fetch(`http://${state.backend}:${state.port}/api/a/attend`,{
+    const response=await fetch(`https://${state.backend}/api/a/attend`,{
       method:'get',
       headers:{
           'Content-Type':'application/json',
@@ -213,7 +213,7 @@ const myFile = new File([jpegBlob], 'myFile.jpg', {
     formData.append('longitude', longitude)
     formData.append('latitude', latitude)
     
-    axios.post(`http://${state.backend}:${state.port}/api/a/attend`, formData, {headers: {
+    axios.post(`https://${state.backend}/api/a/attend`, formData, {headers: {
       'auth-token': localStorage.getItem('token')
       }})
     .then(res => { // then print response status

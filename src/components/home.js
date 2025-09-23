@@ -48,7 +48,7 @@ export const Home = () => {
  }
 
  const getuserdata=async()=>{
-  const response=await fetch(`http://${state.backend}:${state.port}/api/auth/getuser`,{
+  const response=await fetch(`https://${state.backend}/api/auth/getuser`,{
     method:'get',
     headers:{
         'Content-Type':'application/json',
@@ -66,7 +66,7 @@ localStorage.setItem('room_no',json.room_no)
 dispatch({ type: 'UPDATE_EMAIL', payload: json.user.email });
 dispatch({ type: 'UPDATE_MOBILE', payload: json.user.mobile });
 dispatch({ type: 'UPDATE_room', payload: json.room_no });
-dispatch({ type: 'UPDATE_photo_url', payload: `http://${state.backend}:${state.port}/api/a/newupload/${json.user.photo_url}` });
+dispatch({ type: 'UPDATE_photo_url', payload: `https://${state.backend}/api/a/newupload/${json.user.photo_url}` });
 NODisableli()
 }else{
   setroombook_alert("")
@@ -80,7 +80,7 @@ NODisableli()
 
 }
  const getroomnumbers=async()=>{
-  const response=await fetch(`http://${state.backend}:${state.port}/api/b/roomnumbers`,{
+  const response=await fetch(`https://${state.backend}/api/b/roomnumbers`,{
     method:'get',
     headers:{
         'Content-Type':'application/json',
@@ -119,7 +119,7 @@ for(let i=0;i<json.length;i++){
   // Ensure sroom is sent as a primitive value, not an object
   let roomno = sroom;  // just the value, e.g. "10"
   
-  const response = await fetch(`http://${state.backend}:${state.port}/api/b/bookroom`, {
+  const response = await fetch(`https://${state.backend}/api/b/bookroom`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

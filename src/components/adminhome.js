@@ -33,7 +33,7 @@ dispatch({ type: 'UPDATE_AVALUE', payload: true });
 
 
  const getalldata=async (e)=>{
-  const response=await fetch(`http://${state.backend}:${state.port}/api/ad/getallusers`,{
+  const response=await fetch(`https://${state.backend}/api/ad/getallusers`,{
       method:'get',
       headers:{
           'Content-Type':'application/json',

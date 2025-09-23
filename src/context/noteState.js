@@ -9,8 +9,9 @@ const initialState = {
     user_mobile:"9876543210",
     user_email:"user@example.com",
     user_photo_url:"vec2.jpg",
-    backend:"localhost",
-    port:"5000"
+    backend: "hostel-minor-project.onrender.com ", // your Render public backend URL, no http/https prefix
+    port: "", // REMOVE port usage
+
     
   };
   function reducer(state, action) {
